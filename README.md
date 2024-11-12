@@ -14,7 +14,7 @@ My first time at strictly implementing clean architecture and feature-sliced des
 - `application`: Use cases and business logic.
 - `entities`: User and Todo models. In here, we will be using prisma to define the database models.
 
-![clean architecture](./clean-architecture.png)
+![clean architecture](./static/clean-architecture.png)
 
 ## Feature-Sliced Design:
 
@@ -24,7 +24,7 @@ The folders `featured` and `shared` will be inside the `lib` folder.
 - `shared`: Shared components, hooks, types, utils, etc.
 - `routes`: Routing.
 
-![feature-sliced design](./feature-sliced-design.png)
+![feature-sliced design](./static/feature-sliced-design.png)
 
 ## Things to Remember
 
