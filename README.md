@@ -6,6 +6,8 @@ Yes, that thing. [https://todo.thisjt.me](https://todo.thisjt.me)
 
 My first time at strictly implementing clean architecture and feature-sliced design, reflected in the project structure.
 
+- 1. For `entities`, I have 2 approaches that I can follow. First is to go with the pragmatic approach and use prisma to define the database models, and then create the `entities` based on the prisma model types. Second is to go with the pure clean architecture approach and create the `entities` first, and define the prisma schema based on that. I chose the first approach because this is a simple project and I don't want to define the entities twice, first in the prisma models and then in `entities`. I could go with drizzle and define the entities based on the drizzle schema, but that will be an activity later down the line.
+
 ## Architecture:
 
 - `presentation`: Hono API Framework.
