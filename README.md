@@ -15,6 +15,7 @@ My first time at strictly implementing clean architecture and feature-sliced des
 - `entities`: User and Todo models. In here, we will be using prisma to define the database models.
 
 ![clean architecture](./static/clean-architecture.png)
+Source: [Guide on how to implement Clean Architecture in Next.js - Lazar Nikolov](https://www.youtube.com/watch?v=jJVAla0dWJo)
 
 ## Feature-Sliced Design:
 
@@ -25,6 +26,7 @@ The folders `featured` and `shared` will be inside the `lib` folder.
 - `routes`: Routing.
 
 ![feature-sliced design](./static/feature-sliced-design.png)
+Source: [This Folder Structure Makes Me 100% More Productive - Web Dev Simplified](https://www.youtube.com/watch?v=xyxrB2Aa7KE)
 
 ## Things to Remember
 
