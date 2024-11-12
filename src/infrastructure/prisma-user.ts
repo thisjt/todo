@@ -1,16 +1,11 @@
 import type { IUserRepository } from '../interface/user-repository';
 import { PrismaClient } from '@prisma/client';
-import type {
-	UserCreateInput,
-	UserDeleteInput,
-	UserEntity,
-	UserUpdateInput
-} from '../entities/user';
+import type { UserCreateInput, UserDeleteWhere, UserRead, UserUpdateInput } from '../entities/user';
 
 export class PrismaUserRepository implements IUserRepository {
 	constructor(private prisma: PrismaClient) {}
 
-	async create(input: UserCreateInput): Promise<UserEntity> {
+	async create(input: UserCreateInput): Promise<UserRead> {
 		return this.prisma.user.create({
 			data: {
 				...input,
@@ -19,26 +14,26 @@ export class PrismaUserRepository implements IUserRepository {
 		});
 	}
 
-	async findById(id: number): Promise<UserEntity | null> {
+	async findById(id: number): Promise<UserRead | null> {
 		return this.prisma.user.findUnique({
 			where: { id }
 		});
 	}
 
-	async findByUsername(username: string): Promise<UserEntity | null> {
+	async findByUsername(username: string): Promise<UserRead | null> {
 		return this.prisma.user.findUnique({
 			where: { username }
 		});
 	}
 
-	async update(id: number, input: UserUpdateInput): Promise<UserEntity> {
+	async update(id: number, input: UserUpdateInput): Promise<UserRead> {
 		return this.prisma.user.update({
 			where: { id },
 			data: input
 		});
 	}
 
-	async delete(input: UserDeleteInput): Promise<UserEntity> {
+	async delete(input: UserDeleteWhere): Promise<UserRead> {
 		return this.prisma.user.delete({
 			where: input
 		});
