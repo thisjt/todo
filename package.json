@@ -17,8 +17,8 @@
 		"cf-typegen": "wrangler types && move worker-configuration.d.ts src/",
 		"cf-d1:generate": "prisma generate",
 		"cf-d1:create-migrate": "prisma migrate diff --from-local-d1 --to-schema-datamodel ./prisma/schema.prisma --script --output migrations/####_###_what_changed_###.sql",
-		"cf-d1:remote": "wrangler d1 migrations apply imposs-manage --remote",
-		"cf-d1:local": "wrangler d1 migrations apply imposs-manage --local"
+		"cf-d1:remote": "wrangler d1 migrations apply todo --remote",
+		"cf-d1:local": "wrangler d1 migrations apply todo --local"
 	},
 	"devDependencies": {
 		"@cloudflare/workers-types": "^4.20241106.0",
