@@ -11,7 +11,7 @@ export class UserApplication {
 	constructor(private userRepository: IUserRepository) {}
 
 	async create(input: UserCreateInput): Promise<UserEntity> {
-		const hashedPassword = await hashPassword(input.password);
+		const hashedPassword = hashPassword(input.password);
 		return this.userRepository.create({
 			...input,
 			password: hashedPassword.hashedPassword,
