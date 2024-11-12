@@ -2,30 +2,19 @@ import type {
 	UserCreateInput,
 	UserUpdateInput,
 	UserDeleteWhere,
-	UserLoginInput,
-	UserWithoutPassword
+	UserLoginInput
 } from '../entities/user';
 import { UserApplication } from '../application/user';
-import { NotFoundError, UnauthorizedError } from '../entities/errors';
-import { comparePassword } from '$lib/utils/password';
+import { UnauthorizedError } from '../entities/errors';
 
 export class UserController {
 	constructor(private userApplication: UserApplication) {}
 
 	async login(input: UserLoginInput) {
-		const user = await this.userApplication.findByUsername(input.username);
-		if (!user) {
-			throw new NotFoundError('User not found');
+		const userWithoutPassword = await this.userApplication.login(input);
+		if (!userWithoutPassword) {
+			throw new UnauthorizedError('Invalid username or password');
 		}
-		const isPasswordValid = comparePassword(input.password, user.salt, user.password);
-		if (!isPasswordValid) {
-			throw new UnauthorizedError('Invalid password');
-		}
-		const userWithoutPassword = user as UserWithoutPassword;
-
-		delete userWithoutPassword.password;
-		delete userWithoutPassword.salt;
-
 		return userWithoutPassword;
 	}
 
