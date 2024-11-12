@@ -15,7 +15,10 @@ const config = {
 		alias: {
 			$lib: './src/lib',
 			$src: './src',
-			$controller: './src/controller'
+			$controller: './src/controller',
+			$application: './src/application',
+			$infrastructure: './src/infrastructure',
+			$entities: './src/entities'
 		}
 	}
 };
