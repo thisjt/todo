@@ -1,6 +1,6 @@
 # todo
 
-Yes, that thing.
+Yes, that thing. [https://todo.thisjt.me](https://todo.thisjt.me)
 
 ## Diary
 
