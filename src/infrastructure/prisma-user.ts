@@ -19,6 +19,14 @@ export class PrismaUserRepository implements IUserRepository {
 		}
 	}
 
+	async findAll(): Promise<UserRead[]> {
+		try {
+			return this.prisma.user.findMany();
+		} catch (error) {
+			throw new DatabaseError('Failed to find all users', { cause: error });
+		}
+	}
+
 	async findById(id: number): Promise<UserRead | null> {
 		try {
 			return this.prisma.user.findUnique({

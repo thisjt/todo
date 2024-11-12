@@ -14,6 +14,14 @@ export class UserApplication {
 		});
 	}
 
+	async read(username?: string): Promise<UserRead | UserRead[] | null> {
+		if (username) {
+			return this.userRepository.findByUsername(username);
+		} else {
+			return this.userRepository.findAll();
+		}
+	}
+
 	async findById(id: number): Promise<UserRead | null> {
 		return this.userRepository.findById(id);
 	}
