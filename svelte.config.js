@@ -19,6 +19,9 @@ const config = {
 			$application: './src/application',
 			$infrastructure: './src/infrastructure',
 			$entities: './src/entities'
+		},
+		csrf: {
+			checkOrigin: false
 		}
 	}
 };
