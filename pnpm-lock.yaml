@@ -14,6 +14,9 @@ importers:
       '@playwright/test':
         specifier: ^1.45.3
         version: 1.48.2
+      '@prisma/adapter-d1':
+        specifier: ^5.22.0
+        version: 5.22.0
       '@prisma/client':
         specifier: ^5.22.0
         version: 5.22.0(prisma@5.22.0)
@@ -134,6 +137,9 @@ packages:
   '@cloudflare/workers-shared@0.7.1':
     resolution: {integrity: sha512-46cP5FCrl3TrvHeoHLb5SRuiDMKH5kc9Yvo36SAfzt8dqJI/qJRoY1GP3ioHn/gP7v2QIoUOTAzIl7Ml7MnfrA==}
     engines: {node: '>=16.7.0'}
+
+  '@cloudflare/workers-types@4.20240614.0':
+    resolution: {integrity: sha512-fnV3uXD1Hpq5EWnY7XYb+smPcjzIoUFiZpTSV/Tk8qKL3H+w6IqcngZwXQBZ/2U/DwYkDilXHW3FfPhnyD7FZA==}
 
   '@cloudflare/workers-types@4.20241106.0':
     resolution: {integrity: sha512-pI4ivacmp+vgNO/siHDsZ6BdITR0LC4Mh/1+yzVLcl9U75pt5DUDCOWOiqIRFXRq6H65DPnJbEPFo3x9UfgofQ==}
@@ -529,6 +535,9 @@ packages:
   '@polka/url@1.0.0-next.28':
     resolution: {integrity: sha512-8LduaNlMZGwdZ6qWrKlfa+2M4gahzFkprZiAt2TF8uS0qQgBizKXpXURqvTJ4WtmupWxaLqjRb2UCTe72mu+Aw==}
 
+  '@prisma/adapter-d1@5.22.0':
+    resolution: {integrity: sha512-sI1tRkvd0F+0Xde7La4FfW9dMEmY/lEnc0EkBc0eOs4AkJu1mJrXBmQorojrEPI0ys6MNVZao8cQoq/Nnyh9jg==}
+
   '@prisma/client@5.22.0':
     resolution: {integrity: sha512-M0SVXfyHnQREBKxCgyo7sffrKttwE6R8PMq330MIUF0pTwjUhLbW84pFDlf06B27XyCR++VtjugEnIHdr07SVA==}
     engines: {node: '>=16.13'}
@@ -540,6 +549,9 @@ packages:
 
   '@prisma/debug@5.22.0':
     resolution: {integrity: sha512-AUt44v3YJeggO2ZU5BkXI7M4hu9BF2zzH2iF2V5pyXT/lRTyWiElZ7It+bRH1EshoMRxHgpYg4VB6rCM+mG5jQ==}
+
+  '@prisma/driver-adapter-utils@5.22.0':
+    resolution: {integrity: sha512-Y8msGZl9unmVflXoqdxTejv99UD02Gp4VoIvkyw+YxNUIj7nRz35O7yf5D87qNmTiPMGCS1WjUucG9ZuNq8+tw==}
 
   '@prisma/engines-version@5.22.0-44.605197351a3c8bdd595af2d2a9bc3025bca48ea2':
     resolution: {integrity: sha512-2PTmxFR2yHW/eB3uqWtcgRcgAbG1rwG9ZriSvQw+nnb7c4uCr3RAcGMb6/zfE88SKlC1Nj2ziUvc96Z379mHgQ==}
@@ -2086,6 +2098,8 @@ snapshots:
       mime: 3.0.0
       zod: 3.23.8
 
+  '@cloudflare/workers-types@4.20240614.0': {}
+
   '@cloudflare/workers-types@4.20241106.0': {}
 
   '@cspotcode/source-map-support@0.8.1':
@@ -2343,11 +2357,20 @@ snapshots:
 
   '@polka/url@1.0.0-next.28': {}
 
+  '@prisma/adapter-d1@5.22.0':
+    dependencies:
+      '@cloudflare/workers-types': 4.20240614.0
+      '@prisma/driver-adapter-utils': 5.22.0
+
   '@prisma/client@5.22.0(prisma@5.22.0)':
     optionalDependencies:
       prisma: 5.22.0
 
   '@prisma/debug@5.22.0': {}
+
+  '@prisma/driver-adapter-utils@5.22.0':
+    dependencies:
+      '@prisma/debug': 5.22.0
 
   '@prisma/engines-version@5.22.0-44.605197351a3c8bdd595af2d2a9bc3025bca48ea2': {}
 

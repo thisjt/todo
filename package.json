@@ -23,6 +23,7 @@
 	"devDependencies": {
 		"@cloudflare/workers-types": "^4.20241106.0",
 		"@playwright/test": "^1.45.3",
+		"@prisma/adapter-d1": "^5.22.0",
 		"@prisma/client": "^5.22.0",
 		"@sveltejs/adapter-auto": "^3.0.0",
 		"@sveltejs/adapter-cloudflare": "^4.7.4",
