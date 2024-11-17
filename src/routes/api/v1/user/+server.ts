@@ -6,6 +6,10 @@ import { PrismaUserRepository } from '$infrastructure/prisma-user';
 import { UnauthorizedError } from '$entities/errors';
 import { prisma } from '$lib/server/prisma';
 
+const userRepository = new PrismaUserRepository(prisma);
+const userApplication = new UserApplication(userRepository);
+const userController = new UserController(userApplication);
+
 export const POST: RequestHandler = async ({ request }) => {
 	try {
 		const { username, password }: { username: string; password: string } = await request.json();
@@ -13,10 +17,6 @@ export const POST: RequestHandler = async ({ request }) => {
 		if (!username || !password) {
 			return json({ error: 'Username and password are required' }, { status: 400 });
 		}
-
-		const userRepository = new PrismaUserRepository(prisma);
-		const userApplication = new UserApplication(userRepository);
-		const userController = new UserController(userApplication);
 
 		const user = await userController.login({ username, password });
 
