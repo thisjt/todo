@@ -29,7 +29,7 @@ export class PrismaUserRepository implements IUserRepository {
 
 	async findById(id: number): Promise<UserRead | null> {
 		try {
-			return this.prisma.user.findUnique({
+			return this.prisma.user.findFirst({
 				where: { id }
 			});
 		} catch (error) {
@@ -39,10 +39,11 @@ export class PrismaUserRepository implements IUserRepository {
 
 	async findByUsername(username: string): Promise<UserRead | null> {
 		try {
-			return this.prisma.user.findUnique({
+			return this.prisma.user.findFirst({
 				where: { username }
 			});
 		} catch (error) {
+			console.error(error);
 			throw new DatabaseError('Failed to find user by username', { cause: error });
 		}
 	}
