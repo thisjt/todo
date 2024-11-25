@@ -23,6 +23,9 @@ importers:
       '@prisma/client':
         specifier: ^5.22.0
         version: 5.22.0(prisma@5.22.0)
+      '@scalar/hono-api-reference':
+        specifier: ^0.5.161
+        version: 0.5.161(hono@4.6.10)
       '@sveltejs/adapter-auto':
         specifier: ^3.0.0
         version: 3.3.1(@sveltejs/kit@2.8.0(@sveltejs/vite-plugin-svelte@4.0.0(svelte@5.1.15)(vite@5.4.11(@types/node@22.9.0)))(svelte@5.1.15)(vite@5.4.11(@types/node@22.9.0)))
@@ -679,6 +682,20 @@ packages:
     cpu: [x64]
     os: [win32]
 
+  '@scalar/hono-api-reference@0.5.161':
+    resolution: {integrity: sha512-n30VVZrl9z/IcRbyNZZLGx4RMUUH1Zk12ryR1zPG/tdkzNG7ODP6D+rhasn5cSaCg/0BvdCcHEaANEwVJUEjqw==}
+    engines: {node: '>=18'}
+    peerDependencies:
+      hono: ^4.0.0
+
+  '@scalar/openapi-types@0.1.5':
+    resolution: {integrity: sha512-6geH9ehvQ/sG/xUyy3e0lyOw3BaY5s6nn22wHjEJhcobdmWyFER0O6m7AU0ZN4QTjle/gYvFJOjj552l/rsNSw==}
+    engines: {node: '>=18'}
+
+  '@scalar/types@0.0.21':
+    resolution: {integrity: sha512-HR8KeV5zjdVDQdfs7ONhpIRbAzrMS1KIu2sbNgVXtFSaj+1/6WN5gM/yY1DKoaC3oyvpqwd/HyL9rLTqrOkrRw==}
+    engines: {node: '>=18'}
+
   '@sveltejs/adapter-auto@3.3.1':
     resolution: {integrity: sha512-5Sc7WAxYdL6q9j/+D0jJKjGREGlfIevDyHSQ2eNETHcB1TKlQWHcAo8AS8H1QdjNvSXpvOwNjykDUHPEAyGgdQ==}
     peerDependencies:
@@ -788,6 +805,9 @@ packages:
   '@typescript-eslint/visitor-keys@8.14.0':
     resolution: {integrity: sha512-vG0XZo8AdTH9OE6VFRwAZldNc7qtJ/6NLGWak+BtENuEUXGZgFpihILPiBvKXvJ2nFu27XNGC6rKiwuaoMbYzQ==}
     engines: {node: ^18.18.0 || ^20.9.0 || >=21.1.0}
+
+  '@unhead/schema@1.11.13':
+    resolution: {integrity: sha512-fIpQx6GCpl99l4qJXsPqkXxO7suMccuLADbhaMSkeXnVEi4ZIle+l+Ri0z+GHAEpJj17FMaQdO5n9FMSOMUxkw==}
 
   '@vitest/expect@2.1.4':
     resolution: {integrity: sha512-DOETT0Oh1avie/D/o2sgMHGrzYUFFo3zqESB2Hn70z6QB1HrS2IQ9z5DfyTqU8sg4Bpu13zZe9V4+UTNQlUeQA==}
@@ -1268,6 +1288,9 @@ packages:
   hono@4.6.10:
     resolution: {integrity: sha512-IXXNfRAZEahFnWBhUUlqKEGF9upeE6hZoRZszvNkyAz/CYp+iVbxm3viMvStlagRJohjlBRGOQ7f4jfcV0XMGg==}
     engines: {node: '>=16.9.0'}
+
+  hookable@5.5.3:
+    resolution: {integrity: sha512-Yc+BQe8SvoXH1643Qez1zqLRmbA5rCL+sSmk6TVos0LWVfNIB7PGncdlId77WzLGSIB5KaWgTaNTs2lNVEI6VQ==}
 
   ignore@5.3.2:
     resolution: {integrity: sha512-hsBTNUqQTDwkWtcdYI2i06Y/nUBEsNEDJKjWdigLvegy8kDuJAS8uRlpkkcQpyEXL0Z/pjDy5HBmMjRCJ2gq+g==}
@@ -2101,6 +2124,9 @@ packages:
   youch@3.3.4:
     resolution: {integrity: sha512-UeVBXie8cA35DS6+nBkls68xaBBXCye0CNznrhszZjTbRVnJKQuNsyLKBTTL4ln1o1rh2PKtv35twV7irj5SEg==}
 
+  zhead@2.2.4:
+    resolution: {integrity: sha512-8F0OI5dpWIA5IGG5NHUg9staDwz/ZPxZtvGVf01j7vHqSyZ0raHY+78atOVxRqb73AotX22uV1pXt3gYSstGag==}
+
   zimmerframe@1.1.2:
     resolution: {integrity: sha512-rAbqEGa8ovJy4pyBxZM70hg4pE6gDgaQ0Sl9M3enG3I0d6H4XSAM3GeNGLKnsBpuijUow064sf7ww1nutC5/3w==}
 
@@ -2504,6 +2530,18 @@ snapshots:
   '@rollup/rollup-win32-x64-msvc@4.25.0':
     optional: true
 
+  '@scalar/hono-api-reference@0.5.161(hono@4.6.10)':
+    dependencies:
+      '@scalar/types': 0.0.21
+      hono: 4.6.10
+
+  '@scalar/openapi-types@0.1.5': {}
+
+  '@scalar/types@0.0.21':
+    dependencies:
+      '@scalar/openapi-types': 0.1.5
+      '@unhead/schema': 1.11.13
+
   '@sveltejs/adapter-auto@3.3.1(@sveltejs/kit@2.8.0(@sveltejs/vite-plugin-svelte@4.0.0(svelte@5.1.15)(vite@5.4.11(@types/node@22.9.0)))(svelte@5.1.15)(vite@5.4.11(@types/node@22.9.0)))':
     dependencies:
       '@sveltejs/kit': 2.8.0(@sveltejs/vite-plugin-svelte@4.0.0(svelte@5.1.15)(vite@5.4.11(@types/node@22.9.0)))(svelte@5.1.15)(vite@5.4.11(@types/node@22.9.0))
@@ -2656,6 +2694,11 @@ snapshots:
     dependencies:
       '@typescript-eslint/types': 8.14.0
       eslint-visitor-keys: 3.4.3
+
+  '@unhead/schema@1.11.13':
+    dependencies:
+      hookable: 5.5.3
+      zhead: 2.2.4
 
   '@vitest/expect@2.1.4':
     dependencies:
@@ -3177,6 +3220,8 @@ snapshots:
       function-bind: 1.1.2
 
   hono@4.6.10: {}
+
+  hookable@5.5.3: {}
 
   ignore@5.3.2: {}
 
@@ -3932,6 +3977,8 @@ snapshots:
       cookie: 0.7.2
       mustache: 4.2.0
       stacktracey: 2.1.8
+
+  zhead@2.2.4: {}
 
   zimmerframe@1.1.2: {}
 

@@ -26,6 +26,7 @@
 		"@playwright/test": "^1.45.3",
 		"@prisma/adapter-d1": "^5.22.0",
 		"@prisma/client": "^5.22.0",
+		"@scalar/hono-api-reference": "^0.5.161",
 		"@sveltejs/adapter-auto": "^3.0.0",
 		"@sveltejs/adapter-cloudflare": "^4.7.4",
 		"@sveltejs/kit": "^2.0.0",
