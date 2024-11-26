@@ -10,7 +10,7 @@ import { getDI } from '$src/di/container';
 
 const app = new OpenAPIHono<OpenAPIHonoConfig>();
 
-export const honoLoginRoute = app.openapi(loginRouteHandler, async (c) => {
+export const loginRoute = app.openapi(loginRouteHandler, async (c) => {
 	const { username, password } = c.req.valid('json');
 
 	const loginController = getDI('ILoginController');
