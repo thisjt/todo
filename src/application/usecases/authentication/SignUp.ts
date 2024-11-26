@@ -1,4 +1,4 @@
-import { AuthenticationError } from '$src/domain/errors';
+import { UserAlreadyExists } from '$src/domain/errors';
 import { Users } from '$src/domain/Users';
 import { Session } from '$src/domain/Session';
 
@@ -20,7 +20,7 @@ export class SignUpUseCase {
 	async execute(signUpDetails: SignUpDTO) {
 		const user = await this.usersRepository.findUsername(signUpDetails.username);
 
-		if (user) throw new AuthenticationError('Username Exists');
+		if (user) throw new UserAlreadyExists('Username Exists');
 
 		const salt = this.authenticationService.generateSalt();
 
