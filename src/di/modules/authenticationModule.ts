@@ -1,7 +1,7 @@
 import type { Container } from '@evyweb/ioctopus';
 
 import { AuthenticationService } from '$src/infrastructure/services/AuthenticationService';
-import { LoginUseCase } from '$src/application/use-cases/authentication/login';
+import { LoginUseCase } from '$src/application/use-cases/authentication/Login';
 import { LoginController } from '$src/interface-adapter/controller/Login';
 import { UsersRepository } from '$src/infrastructure/repositories/Users';
 

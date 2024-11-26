@@ -4,7 +4,7 @@ import type { IAuthenticationService } from '$src/application/services/Authentic
 
 import type { IUsersRepository } from '$src/application/repositories/Users';
 
-import type { ILoginUseCase } from '$src/application/use-cases/authentication/login';
+import type { ILoginUseCase } from '$src/application/use-cases/authentication/Login';
 
 import type { ILoginController } from '$src/interface-adapter/controller/Login';
 
