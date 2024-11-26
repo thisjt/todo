@@ -5,6 +5,7 @@ import { mountOpenAPI } from './middleware/openapi';
 import { mountPinoLogger } from './middleware/pino';
 
 import { loginRoute } from './v1/users/Login';
+import { signupRoute } from './v1/users/SignUp';
 
 const app = new OpenAPIHono<OpenAPIHonoConfig>();
 
@@ -12,7 +13,7 @@ const app = new OpenAPIHono<OpenAPIHonoConfig>();
 mountPrismaDatabase(app);
 mountPinoLogger(app);
 
-const routes = [loginRoute] as const;
+const routes = [loginRoute, signupRoute] as const;
 
 routes.forEach((route) => app.route('/', route));
 
