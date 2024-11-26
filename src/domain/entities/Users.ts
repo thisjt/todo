@@ -14,8 +14,8 @@ export class Users {
 		this.name = user.name;
 	}
 
-	getSalt(): string {
-		return this.salt;
+	comparePassword(hashedPassword: string) {
+		return hashedPassword === this.password;
 	}
 
 	unsafeGetData() {
@@ -26,6 +26,10 @@ export class Users {
 			salt: this.salt,
 			name: this.name
 		};
+	}
+
+	getSalt(): string {
+		return this.salt;
 	}
 
 	getData() {
