@@ -16,6 +16,7 @@ const config = {
 			$lib: './src/lib',
 			$src: './src',
 			$api: './src/api',
+			$di: './src/di',
 			$controller: './src/controller',
 			$application: './src/application',
 			$infrastructure: './src/infrastructure',
