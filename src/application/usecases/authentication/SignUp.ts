@@ -36,9 +36,9 @@ export class SignUpUseCase {
 			name: signUpDetails.name
 		});
 
-		await this.usersRepository.create(newUser);
+		const createdUser = await this.usersRepository.create(newUser);
 
-		return this.authenticationService.createToken(new Session(newUser, seed));
+		return this.authenticationService.createToken(new Session(createdUser, seed));
 	}
 }
 
