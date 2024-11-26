@@ -3,7 +3,7 @@ import { OpenAPIHono } from '@hono/zod-openapi';
 import * as StatusCodes from 'stoker/http-status-codes';
 import { setCookie } from 'hono/cookie';
 
-import { signupRouteHandler } from '$src/interface-adapter/controller/SignUp';
+import { signupRouteHandler } from '$src/interface-adapter/controller/auth/SignUp';
 
 import { getDI } from '$src/di/container';
 import { InvalidSignupToken, UserAlreadyExists } from '$src/domain/errors';

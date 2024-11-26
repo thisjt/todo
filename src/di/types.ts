@@ -7,8 +7,8 @@ import type { IUsersRepository } from '$src/application/repositories/Users';
 import type { ILoginUseCase } from '$src/application/usecases/authentication/Login';
 import type { ISignUpUseCase } from '$src/application/usecases/authentication/SignUp';
 
-import type { ILoginController } from '$src/interface-adapter/controller/Login';
-import type { ISignUpController } from '$src/interface-adapter/controller/SignUp';
+import type { ILoginController } from '$src/interface-adapter/controller/auth/Login';
+import type { ISignUpController } from '$src/interface-adapter/controller/auth/SignUp';
 
 export const DI_SYMBOLS = {
 	Context: Symbol.for('Context'),

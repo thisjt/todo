@@ -4,7 +4,7 @@ import * as StatusCodes from 'stoker/http-status-codes';
 import { setCookie } from 'hono/cookie';
 import { AuthenticationError } from '$src/domain/errors';
 
-import { loginRouteHandler } from '$src/interface-adapter/controller/Login';
+import { loginRouteHandler } from '$src/interface-adapter/controller/auth/Login';
 
 import { getDI } from '$src/di/container';
 

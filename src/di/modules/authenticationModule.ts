@@ -3,11 +3,11 @@ import type { Container } from '@evyweb/ioctopus';
 import { AuthenticationService } from '$src/infrastructure/services/AuthenticationService';
 import { LoginUseCase } from '$src/application/usecases/authentication/Login';
 import { SignUpUseCase } from '$src/application/usecases/authentication/SignUp';
-import { LoginController } from '$src/interface-adapter/controller/Login';
+import { LoginController } from '$src/interface-adapter/controller/auth/Login';
 import { UsersRepository } from '$src/infrastructure/repositories/Users';
 
 import { DI_SYMBOLS } from '../types';
-import { SignUpController } from '$src/interface-adapter/controller/SignUp';
+import { SignUpController } from '$src/interface-adapter/controller/auth/SignUp';
 
 export function registerAuthenticationModule(container: Container) {
 	container
