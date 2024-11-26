@@ -12,8 +12,8 @@ export function mountOpenAPI(app: OpenAPIHono<OpenAPIHonoConfig>) {
 			description: 'D',
 			contact: {
 				name: 'a',
-				url: 'b',
-				email: 'c'
+				url: 'https://google.com',
+				email: 'a@b.com'
 			}
 		}
 	});
