@@ -7,4 +7,5 @@ export interface IAuthenticationService {
 	validatePassword(users: Users, hashedPassword: string): boolean;
 	hashPassword(password: string, salt: string): string;
 	generateSalt(): string;
+	generateRandom(length: number): string;
 }

@@ -21,13 +21,15 @@ export class LoginUseCase {
 
 		const salt = user.getSalt();
 
+		const seed = this.authenticationService.generateRandom(32);
+
 		const hashedPassword = this.authenticationService.hashPassword(credentials.password, salt);
 
 		const isValid = this.authenticationService.validatePassword(user, hashedPassword);
 
 		if (!isValid) throw new AuthenticationError('Incorrect Password');
 
-		return this.authenticationService.createToken(new Session(user));
+		return this.authenticationService.createToken(new Session(user, seed));
 	}
 }
 
