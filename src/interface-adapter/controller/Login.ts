@@ -55,15 +55,10 @@ export const loginRouteHandler = createRoute({
 	}
 });
 
-interface LoginDTO {
-	username: string;
-	password: string;
-}
-
 export class LoginController {
 	constructor(private _loginUseCase: LoginUseCase) {}
 
-	async execute(credentials: LoginDTO) {
+	async execute(credentials: z.infer<typeof LoginSchema>) {
 		return await this._loginUseCase.execute(credentials);
 	}
 }
