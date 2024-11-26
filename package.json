@@ -2,6 +2,11 @@
 	"name": "todo",
 	"version": "0.0.1",
 	"type": "module",
+	"author": "thisjt",
+	"authorUrl": "https://thisjt.me",
+	"authorEmail": "contact@thisjt.me",
+	"description": "A Hono Backend API server for a simple todo application, implementing Clean Architecture and integrating OpenAPI that can be consumed by any service that conforms to OpenAPI standards.",
+	"private": false,
 	"scripts": {
 		"dev": "vite dev",
 		"build": "vite build",
