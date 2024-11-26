@@ -11,15 +11,14 @@ export class UsersRepository implements IUsersRepository {
 	) {}
 
 	async create(users: Users) {
-		const salt = this._authenticationService.generateSalt();
+		const salt = users.getSalt();
 		const password = users.unsafeGetData().password;
-		const hashedPassword = this._authenticationService.hashPassword(password, salt);
 
 		try {
 			await this._context.var.prisma.user.create({
 				data: {
 					username: users.username,
-					password: hashedPassword,
+					password,
 					salt,
 					name: users.name
 				}
