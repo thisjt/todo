@@ -1,5 +1,6 @@
 import type { OpenAPIHonoConfig } from '$lib/types';
 import type { OpenAPIHono } from '@hono/zod-openapi';
+import { dev } from '$app/environment';
 
 import { pinoLogger } from 'hono-pino';
 import pino from 'pino';
@@ -13,9 +14,11 @@ export function mountPinoLogger(app: OpenAPIHono<OpenAPIHonoConfig>) {
 				{
 					level: 'info'
 				},
-				pretty({
-					ignore: 'req.headers,err.stack'
-				})
+				dev
+					? pretty({
+							ignore: 'req.headers,err.stack'
+						})
+					: undefined
 			),
 			http: {
 				reqId: () => crypto.randomUUID()
