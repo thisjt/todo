@@ -10,7 +10,7 @@ export class ValidateUseCase {
 	) {}
 
 	async execute(token: string, deepVerify?: boolean) {
-		const session = this.authenticationService.validateSession(token);
+		const session = await this.authenticationService.validateSession(token);
 
 		if (!session) throw new AuthenticationError('Invalid Session Token');
 
