@@ -20,7 +20,8 @@ const config = {
 			$controller: './src/controller',
 			$application: './src/application',
 			$infrastructure: './src/infrastructure',
-			$entities: './src/entities'
+			$entities: './src/entities',
+			$root: '.'
 		},
 		csrf: {
 			checkOrigin: false
