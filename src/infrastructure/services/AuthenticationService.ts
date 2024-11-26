@@ -27,6 +27,10 @@ export class AuthenticationService implements IAuthenticationService {
 		return users.comparePassword(hashedPassword);
 	}
 
+	validateSignupToken(token: string) {
+		return token === this._context.env.SIGNUP_TOKEN;
+	}
+
 	hashPassword(password: string, salt: string) {
 		return crypto
 			.createHmac('sha256', this._context.env.PW_SECRET)
