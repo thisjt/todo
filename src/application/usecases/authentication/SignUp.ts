@@ -8,7 +8,6 @@ import type { IUsersRepository } from '$src/application/repositories/Users';
 interface SignUpDTO {
 	username: string;
 	password: string;
-	repeatPassword: string;
 	name: string;
 }
 
@@ -42,3 +41,5 @@ export class SignUpUseCase {
 		return this.authenticationService.createToken(new Session(newUser, seed));
 	}
 }
+
+export type ISignUpUseCase = typeof SignUpUseCase.prototype;
