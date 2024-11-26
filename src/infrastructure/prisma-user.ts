@@ -1,7 +1,7 @@
 import type { IUserRepository } from '../interface/user-repository';
 import { PrismaClient } from '@prisma/client';
-import type { UserCreateInput, UserDeleteWhere, UserRead, UserUpdateInput } from '../entities/user';
-import { DatabaseError } from '../entities/errors';
+import type { UserCreateInput, UserDeleteWhere, UserRead, UserUpdateInput } from '../domain/user';
+import { DatabaseError } from '../domain/errors';
 
 export class PrismaUserRepository implements IUserRepository {
 	constructor(private prisma: PrismaClient) {}

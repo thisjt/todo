@@ -1,4 +1,4 @@
-import type { Users } from '$src/domain/entities/Users';
+import type { Users } from '$src/domain/Users';
 
 export interface IUsersRepository {
 	create(users: Users): Promise<void>;

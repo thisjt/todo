@@ -1,5 +1,5 @@
-import type { Session } from '$src/domain/entities/Session';
-import type { Users } from '$src/domain/entities/Users';
+import type { Session } from '$src/domain/Session';
+import type { Users } from '$src/domain/Users';
 
 export interface IAuthenticationService {
 	createToken(session: Session): string;

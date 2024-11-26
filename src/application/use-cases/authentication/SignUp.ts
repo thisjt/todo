@@ -1,6 +1,6 @@
-import { AuthenticationError } from '$src/domain/entities/errors';
-import { Users } from '$src/domain/entities/Users';
-import { Session } from '$src/domain/entities/Session';
+import { AuthenticationError } from '$src/domain/errors';
+import { Users } from '$src/domain/Users';
+import { Session } from '$src/domain/Session';
 
 import type { IAuthenticationService } from '$src/application/services/AuthenticationService';
 import type { IUsersRepository } from '$src/application/repositories/Users';

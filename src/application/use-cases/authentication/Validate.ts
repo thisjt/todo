@@ -1,4 +1,4 @@
-import { AuthenticationError } from '$src/domain/entities/errors';
+import { AuthenticationError } from '$src/domain/errors';
 
 import type { IAuthenticationService } from '$src/application/services/AuthenticationService';
 import type { IUsersRepository } from '$src/application/repositories/Users';
