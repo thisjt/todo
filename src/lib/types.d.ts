@@ -1,4 +1,5 @@
 import type { PrismaClient } from '@prisma/client';
+import type { Context } from 'hono';
 import type { PinoLogger } from 'hono-pino';
 
 export type OpenAPIHonoConfig = {
@@ -8,3 +9,5 @@ export type OpenAPIHonoConfig = {
 		logger: PinoLogger;
 	};
 };
+
+export type OAHonoContext = Context<OpenAPIHonoConfig>;
