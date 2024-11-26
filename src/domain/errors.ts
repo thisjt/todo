@@ -13,6 +13,7 @@ export class ApplicationError extends Error {
 }
 export class AuthenticationError extends ApplicationError {}
 export class UserAlreadyExists extends ApplicationError {}
+export class NotFound extends ApplicationError {}
 
 export class InterfaceAdapterError extends Error {
 	constructor(message: string, options?: ErrorOptions) {
