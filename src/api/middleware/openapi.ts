@@ -1,5 +1,6 @@
 import type { OpenAPIHonoConfig } from '$lib/types';
 import type { OpenAPIHono } from '@hono/zod-openapi';
+import packageJSON from '$root/package.json';
 
 import { apiReference } from '@scalar/hono-api-reference';
 
@@ -7,13 +8,13 @@ export function mountOpenAPI(app: OpenAPIHono<OpenAPIHonoConfig>) {
 	app.doc('/api/v1/documentation/_', {
 		openapi: '3.1.0',
 		info: {
-			version: '0.0.0',
-			title: 'T',
-			description: 'D',
+			version: packageJSON.version,
+			title: `${packageJSON.properName} - API Documentation`,
+			description: packageJSON.description,
 			contact: {
-				name: 'a',
-				url: 'https://google.com',
-				email: 'a@b.com'
+				name: packageJSON.author,
+				url: packageJSON.authorUrl,
+				email: packageJSON.authorEmail
 			}
 		}
 	});
