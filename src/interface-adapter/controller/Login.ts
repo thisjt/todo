@@ -3,7 +3,7 @@ import { createRoute } from '@hono/zod-openapi';
 import { jsonContentRequired } from 'stoker/openapi/helpers';
 import * as StatusCodes from 'stoker/http-status-codes';
 
-import { LoginUseCase } from '../../application/use-cases/authentication/Login';
+import { LoginUseCase } from '../../application/use-cases/authentication/login';
 
 const LoginSchema = z.object({
 	username: z.string().openapi({
