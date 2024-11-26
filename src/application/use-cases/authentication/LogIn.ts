@@ -30,3 +30,5 @@ export class LoginUseCase {
 		return this.authenticationService.createToken(new Session(user));
 	}
 }
+
+export type ILoginUseCase = typeof LoginUseCase.prototype;
