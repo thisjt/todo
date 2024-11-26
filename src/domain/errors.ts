@@ -19,6 +19,7 @@ export class InterfaceAdapterError extends Error {
 		this.name = this.constructor.name;
 	}
 }
+export class InvalidSignupToken extends InterfaceAdapterError {}
 
 export class PresentationError extends Error {
 	constructor(message: string, options?: ErrorOptions) {
