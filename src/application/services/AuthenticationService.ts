@@ -6,4 +6,5 @@ export interface IAuthenticationService {
 	validateSession(token: string): Session | null;
 	validatePassword(users: Users, password: string): boolean;
 	hashPassword(password: string, salt: string): string;
+	generateSalt(): string;
 }
