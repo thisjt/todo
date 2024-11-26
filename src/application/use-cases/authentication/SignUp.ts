@@ -25,6 +25,8 @@ export class SignUpUseCase {
 
 		const salt = this.authenticationService.generateSalt();
 
+		const seed = this.authenticationService.generateRandom(32);
+
 		const hashedPassword = this.authenticationService.hashPassword(signUpDetails.password, salt);
 
 		const newUser = new Users({
@@ -37,6 +39,6 @@ export class SignUpUseCase {
 
 		await this.usersRepository.create(newUser);
 
-		return this.authenticationService.createToken(new Session(newUser));
+		return this.authenticationService.createToken(new Session(newUser, seed));
 	}
 }
