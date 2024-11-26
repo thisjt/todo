@@ -22,6 +22,7 @@
 	},
 	"devDependencies": {
 		"@cloudflare/workers-types": "^4.20241106.0",
+		"@evyweb/ioctopus": "^1.0.0",
 		"@hono/zod-openapi": "^0.18.0",
 		"@playwright/test": "^1.45.3",
 		"@prisma/adapter-d1": "^5.22.0",

@@ -11,6 +11,9 @@ importers:
       '@cloudflare/workers-types':
         specifier: ^4.20241106.0
         version: 4.20241106.0
+      '@evyweb/ioctopus':
+        specifier: ^1.0.0
+        version: 1.0.0
       '@hono/zod-openapi':
         specifier: ^0.18.0
         version: 0.18.0(hono@4.6.12)(zod@3.23.8)
@@ -487,6 +490,9 @@ packages:
   '@eslint/plugin-kit@0.2.2':
     resolution: {integrity: sha512-CXtq5nR4Su+2I47WPOlWud98Y5Lv8Kyxp2ukhgFx/eW6Blm18VXJO5WuQylPugRo8nbluoi6GvvxBLqHcvqUUw==}
     engines: {node: ^18.18.0 || ^20.9.0 || >=21.1.0}
+
+  '@evyweb/ioctopus@1.0.0':
+    resolution: {integrity: sha512-tXQhmJpIUYZWoyP/1ymxeOFCjFiGxzTu5XVnoJFYwJkTO/hTi8VZRC8yj6pqx6wM6mM1v/0/DfvjR2a3FUn4zw==}
 
   '@fastify/busboy@2.1.1':
     resolution: {integrity: sha512-vBZP4NlzfOlerQTnba4aqZoMhE/a9HY7HRqoOPaETQcSQuWEIyZMHGfVu6w9wGtGK5fED5qRs2DteVCjOH60sA==}
@@ -2468,6 +2474,8 @@ snapshots:
   '@eslint/plugin-kit@0.2.2':
     dependencies:
       levn: 0.4.1
+
+  '@evyweb/ioctopus@1.0.0': {}
 
   '@fastify/busboy@2.1.1': {}
 
