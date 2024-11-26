@@ -5,8 +5,10 @@ import type { IAuthenticationService } from '$src/application/services/Authentic
 import type { IUsersRepository } from '$src/application/repositories/Users';
 
 import type { ILoginUseCase } from '$src/application/usecases/authentication/Login';
+import type { ISignUpUseCase } from '$src/application/usecases/authentication/SignUp';
 
 import type { ILoginController } from '$src/interface-adapter/controller/Login';
+import type { ISignUpController } from '$src/interface-adapter/controller/SignUp';
 
 export const DI_SYMBOLS = {
 	Context: Symbol.for('Context'),
@@ -16,8 +18,10 @@ export const DI_SYMBOLS = {
 	IUsersRepository: Symbol.for('IUsersRepository'),
 
 	ILoginUseCase: Symbol.for('ILoginUseCase'),
+	ISignUpUseCase: Symbol.for('ISignUpUseCase'),
 
-	ILoginController: Symbol.for('ILoginController')
+	ILoginController: Symbol.for('ILoginController'),
+	ISignUpController: Symbol.for('ISignUpController')
 };
 
 export interface DI_RETURN_TYPES {
@@ -28,6 +32,8 @@ export interface DI_RETURN_TYPES {
 	IUsersRepository: IUsersRepository;
 
 	ILoginUseCase: ILoginUseCase;
+	ISignUpUseCase: ISignUpUseCase;
 
 	ILoginController: ILoginController;
+	ISignUpController: ISignUpController;
 }
