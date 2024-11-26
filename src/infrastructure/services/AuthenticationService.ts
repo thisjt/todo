@@ -3,18 +3,18 @@ import { Session } from '$src/domain/Session';
 import type { Users } from '$src/domain/Users';
 import type { IAuthenticationService } from '$src/application/services/AuthenticationService';
 
-import jwt from 'jsonwebtoken';
+import * as jwt from 'hono/jwt';
 import crypto from 'crypto';
 
 export class AuthenticationService implements IAuthenticationService {
 	constructor(private _context: OAHonoContext) {}
 
-	createToken(session: Session): string {
+	async createToken(session: Session) {
 		return jwt.sign(session.getData(), this._context.env.JWT_SECRET);
 	}
 
-	validateSession(token: string): Session | null {
-		const verified = jwt.verify(token, this._context.env.JWT_SECRET) as ReturnType<
+	async validateSession(token: string) {
+		const verified = (await jwt.verify(token, this._context.env.JWT_SECRET)) as ReturnType<
 			typeof Session.prototype.getData
 		>;
 
@@ -23,11 +23,11 @@ export class AuthenticationService implements IAuthenticationService {
 		return new Session(verified, verified.seed);
 	}
 
-	validatePassword(users: Users, hashedPassword: string): boolean {
+	validatePassword(users: Users, hashedPassword: string) {
 		return users.comparePassword(hashedPassword);
 	}
 
-	hashPassword(password: string, salt: string): string {
+	hashPassword(password: string, salt: string) {
 		return crypto
 			.createHmac('sha256', this._context.env.PW_SECRET)
 			.update(password + salt)
@@ -35,11 +35,11 @@ export class AuthenticationService implements IAuthenticationService {
 			.digest('hex');
 	}
 
-	generateSalt(): string {
+	generateSalt() {
 		return crypto.randomBytes(16).toString('hex');
 	}
 
-	generateRandom(len: number): string {
+	generateRandom(len: number) {
 		return crypto.randomBytes(len).toString('hex');
 	}
 }
