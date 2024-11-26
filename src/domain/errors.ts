@@ -33,3 +33,4 @@ export class InfrastructureError extends Error {
 		this.name = this.constructor.name;
 	}
 }
+export class DatabaseError extends InfrastructureError {}
