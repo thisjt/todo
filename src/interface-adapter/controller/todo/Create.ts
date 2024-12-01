@@ -11,12 +11,12 @@ const TodoSchemaRaw = {
 	completed: z.boolean().openapi({})
 };
 
-const TodoSchema = z.object({
+export const TodoSchema = z.object({
 	id: z.number().openapi({}),
 	...TodoSchemaRaw
 });
 
-const CreateTodoSchema = z.object(TodoSchemaRaw);
+export const CreateTodoSchema = z.object(TodoSchemaRaw);
 
 const FailedResponse = z.object({
 	success: z.boolean().openapi({})
