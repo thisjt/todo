@@ -7,7 +7,8 @@ export default defineConfig({
 	test: {
 		include: ['tests/**/*.{test,spec}.{js,ts}'],
 		coverage: {
-			provider: 'istanbul'
+			provider: 'istanbul',
+			reporter: ['text']
 		}
 	}
 });
