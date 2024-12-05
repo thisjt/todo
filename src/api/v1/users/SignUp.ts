@@ -6,7 +6,7 @@ import { setCookie } from 'hono/cookie';
 import { signupRouteHandler } from '$src/interface-adapter/controller/auth/SignUp';
 
 import { getDI } from '$src/di/container';
-import { InvalidSignupToken, UserAlreadyExists } from '$src/domain/errors';
+import { InvalidSignupToken, AlreadyExists } from '$src/domain/errors';
 
 const app = new OpenAPIHono<OpenAPIHonoConfig>();
 
@@ -31,7 +31,7 @@ export const signupRoute = app.openapi(signupRouteHandler, async (c) => {
 			c.var.logger.info(error, 'Invalid Signup Token', requestData.username);
 			return c.json({ success: false }, StatusCodes.UNAUTHORIZED);
 		}
-		if (error instanceof UserAlreadyExists) {
+		if (error instanceof AlreadyExists) {
 			c.var.logger.info(error, 'User Already Exists', requestData.username);
 			return c.json({ success: false }, StatusCodes.BAD_REQUEST);
 		}
