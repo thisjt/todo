@@ -1,3 +1,11 @@
+interface UsersObject {
+	id: number;
+	username: string;
+	name: string;
+	password: string;
+	salt: string;
+}
+
 export class Users {
 	public id: number;
 	public username: string;
@@ -6,7 +14,7 @@ export class Users {
 	private password: string;
 	private salt: string;
 
-	constructor(user: ReturnType<Users['unsafeGetData']>) {
+	constructor(user: UsersObject) {
 		this.id = user.id;
 		this.username = user.username;
 		this.password = user.password;
@@ -14,11 +22,11 @@ export class Users {
 		this.name = user.name;
 	}
 
-	comparePassword(hashedPassword: string) {
+	comparePassword(hashedPassword: string): boolean {
 		return hashedPassword === this.password;
 	}
 
-	unsafeGetData() {
+	unsafeGetData(): UsersObject {
 		return {
 			id: this.id,
 			username: this.username,
@@ -32,7 +40,7 @@ export class Users {
 		return this.salt;
 	}
 
-	getData() {
+	getData(): Omit<UsersObject, 'password' | 'salt'> {
 		return {
 			id: this.id,
 			username: this.username,
