@@ -1,19 +1,35 @@
-export class DomainError extends Error {
+class ErrorEntity extends Error {
+	private _code = 0;
+	constructor(message: string) {
+		super(message);
+		this.name = this.constructor.name;
+	}
+	get code() {
+		return this._code;
+	}
+	set code(num) {
+		this._code += num;
+	}
+}
+
+export class DomainError extends ErrorEntity {
 	constructor(
 		message: string,
 		public readonly context?: Record<string, unknown>
 	) {
 		super(message);
+		this.code = 1000;
 		this.name = this.constructor.name;
 	}
 }
 
-export class ApplicationError extends Error {
+export class ApplicationError extends ErrorEntity {
 	constructor(
 		message: string,
 		public readonly context?: Record<string, unknown>
 	) {
 		super(message);
+		this.code = 2000;
 		this.name = this.constructor.name;
 	}
 }
@@ -24,6 +40,7 @@ export class AuthenticationError extends ApplicationError {
 			identifier,
 			...context
 		});
+		this.code = 1;
 	}
 }
 export class AlreadyExists extends ApplicationError {
@@ -33,6 +50,7 @@ export class AlreadyExists extends ApplicationError {
 			identifier,
 			...context
 		});
+		this.code = 2;
 	}
 }
 export class NotFound extends ApplicationError {
@@ -42,36 +60,40 @@ export class NotFound extends ApplicationError {
 			identifier,
 			...context
 		});
+		this.code = 3;
 	}
 }
 
-export class InterfaceAdapterError extends Error {
+export class InterfaceAdapterError extends ErrorEntity {
 	constructor(
 		message: string,
 		public readonly context?: Record<string, unknown>
 	) {
 		super(message);
+		this.code = 3000;
 		this.name = this.constructor.name;
 	}
 }
 export class InvalidSignupToken extends InterfaceAdapterError {}
 
-export class PresentationError extends Error {
+export class PresentationError extends ErrorEntity {
 	constructor(
 		message: string,
 		public readonly context?: Record<string, unknown>
 	) {
 		super(message);
+		this.code = 4000;
 		this.name = this.constructor.name;
 	}
 }
 
-export class InfrastructureError extends Error {
+export class InfrastructureError extends ErrorEntity {
 	constructor(
 		message: string,
 		public readonly context?: Record<string, unknown>
 	) {
 		super(message);
+		this.code = 5000;
 		this.name = this.constructor.name;
 	}
 }
