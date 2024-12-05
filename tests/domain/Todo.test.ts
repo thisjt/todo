@@ -39,7 +39,9 @@ describe('todo entity domain', () => {
 
 		it('should update only updatable values', () => {
 			const todo = new Todo(todoMockData);
+
 			todo.updateData(modifiedMockData);
+			todo.updateData({});
 
 			expect(todo.getData()).toEqual({
 				...modifiedMockData,
