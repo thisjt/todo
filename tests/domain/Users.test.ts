@@ -34,7 +34,7 @@ describe('domain/entity/Users', () => {
 		});
 
 		it('should return publicly accessible data', () => {
-			expect(user.getData()).toBe({
+			expect(user.getData()).toEqual({
 				...mockUserData,
 				...{
 					password: undefined,
@@ -44,7 +44,7 @@ describe('domain/entity/Users', () => {
 		});
 
 		it('should return all data, including private ones', () => {
-			expect(user.unsafeGetData()).toBe(mockUserData);
+			expect(user.unsafeGetData()).toEqual(mockUserData);
 		});
 	});
 });
