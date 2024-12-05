@@ -27,3 +27,6 @@ vite.config.ts.timestamp-*
 
 # db
 *.db*
+
+# test coverage
+coverage/*

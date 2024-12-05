@@ -5,6 +5,9 @@ export default defineConfig({
 	plugins: [sveltekit()],
 
 	test: {
-		include: ['tests/**/*.{test,spec}.{js,ts}']
+		include: ['tests/**/*.{test,spec}.{js,ts}'],
+		coverage: {
+			provider: 'istanbul'
+		}
 	}
 });
