@@ -6,7 +6,7 @@ import { setCookie } from 'hono/cookie';
 import { signupRouteHandler } from '$src/interface-adapter/controller/auth/SignUp';
 
 import { getDI } from '$src/di/container';
-import { InvalidSignupToken, AlreadyExists } from '$src/domain/errors';
+import { InvalidSignupToken, AlreadyExists } from '$src/domain/Errors';
 
 const app = new OpenAPIHono<OpenAPIHonoConfig>();
 

@@ -1,7 +1,7 @@
 import type { IUsersRepository } from '$src/application/repositories/Users';
 import type { OAHonoContext } from '$lib/types';
 import type { IAuthenticationService } from '$src/application/services/AuthenticationService';
-import { DatabaseError } from '$src/domain/errors';
+import { DatabaseError } from '$src/domain/Errors';
 import { Users } from '$src/domain/Users';
 
 export class UsersRepository implements IUsersRepository {

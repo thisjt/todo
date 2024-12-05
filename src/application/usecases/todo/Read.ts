@@ -1,5 +1,5 @@
 import type { ITodoRepository } from '$src/application/repositories/Todo';
-import { NotFound } from '$src/domain/errors';
+import { NotFound } from '$src/domain/Errors';
 
 export class ReadTodoUseCase {
 	constructor(private todoRepository: ITodoRepository) {}

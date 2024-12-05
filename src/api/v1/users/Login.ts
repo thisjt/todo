@@ -2,7 +2,7 @@ import type { OpenAPIHonoConfig } from '$lib/types';
 import { OpenAPIHono } from '@hono/zod-openapi';
 import * as StatusCodes from 'stoker/http-status-codes';
 import { setCookie } from 'hono/cookie';
-import { AuthenticationError } from '$src/domain/errors';
+import { AuthenticationError } from '$src/domain/Errors';
 
 import { loginRouteHandler } from '$src/interface-adapter/controller/auth/Login';
 

@@ -5,7 +5,7 @@ import * as StatusCodes from 'stoker/http-status-codes';
 
 import { SignUpUseCase } from '$src/application/usecases/authentication/SignUp';
 import type { IAuthenticationService } from '$src/application/services/AuthenticationService';
-import { InvalidSignupToken } from '$src/domain/errors';
+import { InvalidSignupToken } from '$src/domain/Errors';
 
 const SignupSchema = z.object({
 	username: z.string().openapi({

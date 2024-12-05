@@ -1,4 +1,4 @@
-import { AlreadyExists } from '$src/domain/errors';
+import { AlreadyExists } from '$src/domain/Errors';
 import { Users } from '$src/domain/Users';
 import { Session } from '$src/domain/Session';
 
