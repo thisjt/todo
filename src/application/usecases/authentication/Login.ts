@@ -17,7 +17,7 @@ export class LoginUseCase {
 
 	async execute(credentials: LoginDTO) {
 		const user = await this.usersRepository.findUsername(credentials.username);
-		if (!user) throw new AuthenticationError('Missing Username');
+		if (!user) throw new AuthenticationError(0, { reason: 'Missing User' });
 
 		const salt = user.getSalt();
 
@@ -27,7 +27,7 @@ export class LoginUseCase {
 
 		const isValid = this.authenticationService.validatePassword(user, hashedPassword);
 
-		if (!isValid) throw new AuthenticationError('Incorrect Password');
+		if (!isValid) throw new AuthenticationError(user.username, { reason: 'Incorrect Password' });
 
 		return this.authenticationService.createToken(new Session(user, seed));
 	}
