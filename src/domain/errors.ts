@@ -17,7 +17,15 @@ export class ApplicationError extends Error {
 		this.name = this.constructor.name;
 	}
 }
-export class AuthenticationError extends ApplicationError {}
+
+export class AuthenticationError extends ApplicationError {
+	constructor(identifier: string | number, context?: Record<string, unknown>) {
+		super(`User "${identifier}" failed authentication.`, {
+			identifier,
+			...context
+		});
+	}
+}
 export class AlreadyExists extends ApplicationError {
 	constructor(entity: string, identifier: string | number, context?: Record<string, unknown>) {
 		super(`Entity "${entity}" with the identifier "${identifier}" already EXISTS.`, {
