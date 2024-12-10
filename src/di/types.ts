@@ -43,7 +43,7 @@ export const DI_SYMBOLS = {
 	ICreateTodoUseCase: Symbol.for('ICreateTodoUseCase'),
 	IDeleteTodoUseCase: Symbol.for('IDeleteTodoUseCase'),
 	IReadTodoUseCase: Symbol.for('IReadTodoUseCase'),
-	IReadFromUserTodoUseCase: Symbol.for('IReadFromUserTodoUseCase'),
+	IReadManyTodoUseCase: Symbol.for('IReadManyTodoUseCase'),
 	IUpdateTodoUseCase: Symbol.for('IUpdateTodoUseCase')
 };
 
