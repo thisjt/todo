@@ -6,7 +6,9 @@ export class ReadTodoUseCase {
 
 	async execute(id: number) {
 		const todo = await this.todoRepository.find(id);
-		if (!todo) throw new NotFound('Todo Entry Does Not Exist');
+		if (!todo) throw new NotFound('Todo', 1);
 		return todo;
 	}
 }
+
+export type IReadTodoUseCase = typeof ReadTodoUseCase.prototype;

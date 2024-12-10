@@ -15,3 +15,5 @@ export class CreateTodoUseCase {
 		return todo;
 	}
 }
+
+export type ICreateTodoUseCase = typeof CreateTodoUseCase.prototype;

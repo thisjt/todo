@@ -8,3 +8,5 @@ export class ReadManyTodoUseCase {
 		return todo;
 	}
 }
+
+export type IReadManyTodoUseCase = typeof ReadManyTodoUseCase.prototype;

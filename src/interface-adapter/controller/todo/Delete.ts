@@ -37,3 +37,5 @@ export class DeleteTodoController {
 		this._deleteTodoUseCase.execute(id);
 	}
 }
+
+export type IDeleteTodoController = typeof DeleteTodoController.prototype;

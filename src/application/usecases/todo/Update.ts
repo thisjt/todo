@@ -10,3 +10,5 @@ export class UpdateTodoUseCase {
 		return updatedTodo;
 	}
 }
+
+export type IUpdateTodoUseCase = typeof UpdateTodoUseCase.prototype;

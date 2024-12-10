@@ -7,3 +7,5 @@ export class DeleteTodoUseCase {
 		await this.todoRepository.delete(id);
 	}
 }
+
+export type IDeleteTodoUseCase = typeof DeleteTodoUseCase.prototype;
