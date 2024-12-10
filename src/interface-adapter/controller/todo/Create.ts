@@ -13,6 +13,7 @@ const TodoSchemaRaw = {
 
 export const TodoSchema = z.object({
 	id: z.number().openapi({}),
+	userId: z.number().openapi({}),
 	...TodoSchemaRaw
 });
 
