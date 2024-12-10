@@ -9,8 +9,13 @@ export default defineConfig({
 		coverage: {
 			provider: 'istanbul',
 			reporter: ['text'],
-			include: ['src/**/*.ts'],
-			exclude: ['src/**/*.d.ts', 'src/hooks.server.ts']
+			include: [
+				'src/api/v1/**/*.ts',
+				'src/application/**/*.ts',
+				'src/domain/**/*.ts',
+				'src/infrastructure/**/*.ts',
+				'src/interface-adapter/**/*.ts'
+			]
 		}
 	}
 });
