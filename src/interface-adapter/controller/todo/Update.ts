@@ -6,7 +6,7 @@ import { jsonContentRequired } from 'stoker/openapi/helpers';
 import { ReadTodoSchemaInput } from './Read';
 import type { UpdateTodoUseCase } from '$src/application/usecases/todo/Update';
 import { TodoSchema } from './Create';
-import { Todo } from '$src/domain/Todo';
+import type { ReadTodoUseCase } from '$src/application/usecases/todo/Read';
 
 const UpdateTodoSchema = z.object({
 	title: z.string().optional().openapi({}),
@@ -39,16 +39,20 @@ export const updateTodoRouteHandler = createRoute({
 });
 
 export class UpdateTodoController {
-	constructor(private _updateTodoUseCase: UpdateTodoUseCase) {}
+	constructor(
+		private _updateTodoUseCase: UpdateTodoUseCase,
+		private _readTodoUseCase: ReadTodoUseCase
+	) {}
 
 	async execute(userId: number, id: number, updateTodoDetails: z.infer<typeof UpdateTodoSchema>) {
-		const updateTodo = new Todo({
-			id,
-			...updateTodoDetails,
-			userId
-		});
+		const updateTodo = await this._readTodoUseCase.execute(id);
 
-		this._updateTodoUseCase.execute(updateTodo);
+		if (updateTodo.userId === userId) {
+			updateTodo.updateData(updateTodoDetails);
+			await this._updateTodoUseCase.execute(updateTodo);
+		}
+
+		return updateTodo;
 	}
 }
 
