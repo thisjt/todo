@@ -9,6 +9,15 @@ import type { ISignUpUseCase } from '$src/application/usecases/authentication/Si
 
 import type { ILoginController } from '$src/interface-adapter/controller/auth/Login';
 import type { ISignUpController } from '$src/interface-adapter/controller/auth/SignUp';
+import type { ICreateTodoController } from '$src/interface-adapter/controller/todo/Create';
+import type { IDeleteTodoController } from '$src/interface-adapter/controller/todo/Delete';
+import type { IReadTodoController } from '$src/interface-adapter/controller/todo/Read';
+import type { IUpdateTodoController } from '$src/interface-adapter/controller/todo/Update';
+import type { ICreateTodoUseCase } from '$src/application/usecases/todo/Create';
+import type { IDeleteTodoUseCase } from '$src/application/usecases/todo/Delete';
+import type { IReadTodoUseCase } from '$src/application/usecases/todo/Read';
+import type { IReadManyTodoUseCase } from '$src/application/usecases/todo/ReadFromUser';
+import type { IUpdateTodoUseCase } from '$src/application/usecases/todo/Update';
 
 export const DI_SYMBOLS = {
 	Context: Symbol.for('Context'),
@@ -21,7 +30,18 @@ export const DI_SYMBOLS = {
 	ISignUpUseCase: Symbol.for('ISignUpUseCase'),
 
 	ILoginController: Symbol.for('ILoginController'),
-	ISignUpController: Symbol.for('ISignUpController')
+	ISignUpController: Symbol.for('ISignUpController'),
+
+	ICreateTodoController: Symbol.for('ICreateTodoController'),
+	IDeleteTodoController: Symbol.for('IDeleteTodoController'),
+	IReadTodoController: Symbol.for('IReadTodoController'),
+	IUpdateTodoController: Symbol.for('IUpdateTodoController'),
+
+	ICreateTodoUseCase: Symbol.for('ICreateTodoUseCase'),
+	IDeleteTodoUseCase: Symbol.for('IDeleteTodoUseCase'),
+	IReadTodoUseCase: Symbol.for('IReadTodoUseCase'),
+	IReadFromUserTodoUseCase: Symbol.for('IReadFromUserTodoUseCase'),
+	IUpdateTodoUseCase: Symbol.for('IUpdateTodoUseCase')
 };
 
 export interface DI_RETURN_TYPES {
@@ -36,4 +56,15 @@ export interface DI_RETURN_TYPES {
 
 	ILoginController: ILoginController;
 	ISignUpController: ISignUpController;
+
+	ICreateTodoController: ICreateTodoController;
+	IDeleteTodoController: IDeleteTodoController;
+	IReadTodoController: IReadTodoController;
+	IUpdateTodoController: IUpdateTodoController;
+
+	ICreateTodoUseCase: ICreateTodoUseCase;
+	IDeleteTodoUseCase: IDeleteTodoUseCase;
+	IReadTodoUseCase: IReadTodoUseCase;
+	IReadManyTodoUseCase: IReadManyTodoUseCase;
+	IUpdateTodoUseCase: IUpdateTodoUseCase;
 }
