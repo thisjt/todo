@@ -7,10 +7,12 @@ import { mountPinoLogger } from './middleware/pino';
 import { loginRoute } from './v1/users/Login';
 import { signupRoute } from './v1/users/SignUp';
 import { mountJWTAuth } from './middleware/jwt';
+import { mountContextToDI } from './middleware/contextInjector';
 
 const app = new OpenAPIHono<OpenAPIHonoConfig>();
 
 // mount BEFORE routes
+mountContextToDI(app);
 mountPinoLogger(app);
 mountPrismaDatabase(app);
 mountJWTAuth(app);
