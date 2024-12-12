@@ -6,12 +6,14 @@ import { mountPinoLogger } from './middleware/pino';
 
 import { loginRoute } from './v1/users/Login';
 import { signupRoute } from './v1/users/SignUp';
+import { mountJWTAuth } from './middleware/jwt';
 
 const app = new OpenAPIHono<OpenAPIHonoConfig>();
 
 // mount BEFORE routes
-mountPrismaDatabase(app);
 mountPinoLogger(app);
+mountPrismaDatabase(app);
+mountJWTAuth(app);
 
 const routes = [loginRoute, signupRoute] as const;
 
