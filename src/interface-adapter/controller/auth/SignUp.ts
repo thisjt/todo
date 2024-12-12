@@ -53,7 +53,7 @@ const SignupSuccessOrFailedResponse = z.object({
 
 export const signupRouteHandler = createRoute({
 	method: 'post',
-	path: '/api/v1/signup',
+	path: '/api/v1/auth/signup',
 	summary: 'Sign Up',
 	description: 'Sign up to the system',
 	request: {

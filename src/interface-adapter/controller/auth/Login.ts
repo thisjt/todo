@@ -33,7 +33,7 @@ const LoginSuccessOrFailedResponse = z.object({
 
 export const loginRouteHandler = createRoute({
 	method: 'post',
-	path: '/api/v1/login',
+	path: '/api/v1/auth/login',
 	summary: 'Login',
 	description: 'Login to the system',
 	request: {
